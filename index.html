@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empllo</title>
+    <link rel="icon" href="7.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+        header {
+            height: 60vh;
+            width: 100%;
+            background-color: rgb(237, 212, 246);
+            border-bottom-left-radius: 150px;
+            border-bottom-right-radius: 150px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        #logo img {
+            padding-top: 10px;
+            height: 80px;
+            width: 100px;
+        }
+        .menu-bar {
+            background-color:  transparent;
+            height: 80px;
+            width: 480px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .menu-bar i {
+            margin-left: 10px;
+        }
+        .menu-bar ul {
+            list-style: none;
+            display: flex;
+        }
+        .menu-bar ul li {
+            padding: 10px 20px;
+            position: relative;
+        }
+        .menu-bar ul li a {
+            font-size: 13px;
+            font-weight: bold;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color:  black;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .menu-bar ul li a:hover {
+            color: grey;
+        }
+        .dropdown-menu {
+            display: none;
+        }
+        .dropdown-menu ul li:hover {
+            background-color: antiquewhite;
+        }
+        .menu-bar ul li:hover .dropdown-menu {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: white;
+        }
+        .menu-bar ul li:hover .dropdown-menu ul {
+            display: block;
+            margin: 10px;
+        }
+        .menu-bar ul li:hover .dropdown-menu ul li {
+            width: 150px;
+            padding: 10px;
+        }
+        #d0 {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        #d1 button{
+            background-color: rgb(230, 17, 237);
+            height: 40px;
+            width: 110px;
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            font-size: 16px;
+            color: aliceblue;
+        }
+        #d1 button:hover {
+            background-color: black;
+            cursor: pointer;
+        }
+        #d2 button{
+            height: 40px;
+            width: 100px;
+            background-color: rgb(237, 212, 246);
+            padding: 10px;
+            border: 2px solid rgb(230, 17, 237);
+            border-radius: 15px;
+            font-size: 16px;
+            color: rgb(230, 17, 237);
+        }
+        #d2 button:hover {
+            background-color: rgb(234, 201, 247);
+            cursor: pointer;
+        }
+        #d3 i {
+            font-size: 30px;
+            color: rgb(230, 17, 237);
+        }
+        #n1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 70px;
+            gap: 20px;
+        }
+        #l0 {
+            display: flex; 
+            gap: 20px;
+        }
+        #l0 i {
+            font-size: 20px;
+            padding-right: 10px;
+        }
+        #l1 button{
+            background-color: rgb(230, 17, 237);
+            height: 50px;
+            width: 150px;
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            font-size: 20px;
+            color: aliceblue;
+        }
+        #l1 button:hover {
+            background-color: black;
+            cursor: pointer;
+        }
+        #l2 button{
+            height: 50px;
+            width: 150px;
+            background-color: black;
+            padding: 10px;
+            border: none; 
+            border-radius: 15px;
+            font-size: 20px;
+            color: white;
+        }
+        #l2 button:hover {
+            background-color: rgb(230, 17, 237);
+            cursor: pointer;
+        }
+        section {
+            height: 30vh;
+            width: 80%;
+            margin: auto;
+            padding: 30px;
+        }
+        section p a {
+            text-decoration: none;
+            color: rgb(230, 17, 237);
+        }
+        section p a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+        #b0 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+        }
+        .b1 {
+            height: 150px;
+            width: 24%;
+            padding: 20px;
+            background-color: beige;
+            box-sizing: border-box;
+            border-radius: 30px;
+        }
+        .b1 img {
+            height: 30px;
+            width: 50px;
+            padding-right: 7px;
+            box-sizing: border-box;
+            float: left;
+        }
+        .b1 h3 {
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .b1 p {
+            font-size: 14px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .b1:hover {
+            background-color: white;
+            border: 1px solid black;
+        }
+        #z1 {
+            height: 30vh;
+            width: 80%;
+            margin: auto;
+            padding: 30px;
+        }
+        #m0 {
+            height: fit-content;
+            width: 100%;
+            background-color: rgb(228, 221, 221);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .c3 {
+            height: 20vh;
+            width: 95%;
+            border-radius: 10px;
+            background-color: aliceblue;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <img src="1.png">
+            </div>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="#">Find a job</a><i class="fa-solid fa-chevron-down"></i>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">Engineering</a></li>
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Customer Soport</a></li>
+                                <li><a href="#">Finance</a></li>
+                                <li><a href="#">Management</a></li>
+                                <li><a href="#">Product</a></li>
+                                <li><a href="#">Sales</a></li>
+                                <li><a href="#">content</a></li>
+                                <li><a href="#">All Other</a></li>
+                                <li><a href="#">Browse All the jobs</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Find a company</a><i class="fa-solid fa-chevron-down"></i>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="#">Browse all the companies</a></li>
+                                <li><a href="#">Top 100Remote companies</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Resources</a><i class="fa-solid fa-chevron-down"></i>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="#">AI Tools</a></li>
+                                <li><a href="#">Interview Questions</a></li>
+                                <li><a href="#">Browse by roles</a></li>
+                                <li><a href="#">Browse by skills</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                  </ul>
+            </div>
+            <div id="d0">
+                <div id="d1">
+                    <a href="#"><button>Post a job</button></a>
+                </div>
+                <div id="d2">
+                    <a href="#"><button>Sign up</button></a>
+                </div>
+                <div id="d3">
+                    <i class="fa-regular fa-moon"></i>
+                </div>
+            </div>
+        </nav>
+        <div id="n1">
+            <h1 style="font-size: 60px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Where you find top <font color="violet">tech jobs</font></h1>
+            <p style="font-size: 20px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Browse 13,222 </font>jobs from 15,363 </font>companies.</p>
+            <div id="l0">
+                <div id="l1">
+                    <a href="#"><button><i class="fa-solid fa-rocket"></i>Post a job</button></a>
+                </div>
+                <div id="l2">
+                    <a href="#"><button><i class="fa-solid fa-box"></i>Find a job</button></a>
+                </div>
+            </div>
+            <p>Join <font color="violet">+ 105,019 </font>job seekers using Empllo every month</p>
+        </div>
+    </header>
+    <section>
+        <p>Featured companies <a href="#">Your company here?</a></p>
+        <div id="b0">
+            <div class="b1">
+                <img src="2.jpeg">
+                <h3>Lamborghini</h3>
+                <br><p>Find Lamborghini models, new releases, latest news, events, and the dealers across the world.</p>
+            </div>
+            <div class="b1">
+                <img src="3.png">
+                <h3>Pagani</h3>
+                <br><p>Tutti i modelli, la storia di Horacio Pagani e le novità sul mondo Pagani Auto.</p>
+            </div>
+            <div class="b1">
+                <img src="4.png">
+                <h3>Bugatti</h3>
+                <br><p>EXPERIENCE THE INCOMPARABLE NATURE OF THE HYPER LUXURY BRAND AND ALL ITS OFFERING.</p>
+            </div>
+            <div class="b1">
+                <img src="5.png">
+                <h3>Koenigsegg</h3>
+                <br><p>The. Show. Must. Go On ... </p>
+            </div>
+        </div>
+    </section>
+    <div id="z1">
+        <h2 style="font-size: 40px; font-weight: bold;">Engineering Jobs</h2>
+        <p style="font-size: 20px;">Explore the latest and most in-demand Engineering startup opportunities</p>
+        <div id="m0">
+            <div class="c3"></div>
+            <div class="c3"></div>
+            <div class="c3"></div>
+            <div class="c3"></div>
+        </div>
+    </div>
+</body>
+</html>
